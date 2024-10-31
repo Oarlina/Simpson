@@ -1,0 +1,77 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    } /* permet de réinitialiser les marges et tailles des éléments à 0*/
+
+body{
+    background-color: rgb(241, 240, 127);
+    }
+h1{
+    color:rgb(250, 192, 67);
+    padding-bottom: 1em;
+    padding-top: 0.5em;
+    }
+h2,footer{
+    background-color: #4ab9fa;
+    text-align: center;
+}
+h2{
+    padding: 0.2em;
+}
+header>figure{
+    text-align: center;
+    }
+header>figure>img{
+    vertical-align: top; /*permet de coller l'image au texte suivant*/
+    }
+main>nav>a, aside, footer, h2{
+    color:white;
+    }
+nav{
+    text-align-last: center;
+    height:20%; 
+    max-width: 30%; 
+    }
+nav, aside{
+    background-color: #4ab9fa;
+    padding: 1em;
+    width:20%;
+    }
+main{
+    background-color: white;
+    display:flex;
+    flex-direction: row; /* permet à ce que les éléments soit alignés horizontalement de la gauche vers la droite*/
+    padding:0.5em;
+    }
+p{
+    text-align: justify;/* permet au paragraphe d'être justifié*/
+    } 
+main>article{
+    width:60%;
+    padding:0.5em;
+}
+header>figure>img{
+    width:100%;/* permet a l'image du header d'être aligné avec le reste du texte*/
+}
+img{
+    max-width: 100%;
+    max-height: 100%;
+} /* permet que l'image puisse varié de taille selon la forme de la page*/
+#wrapper{
+    width:80%;
+    margin: auto;
+} /* permet au header, main et aside d'etre centré et d'avoir des bords "vide" sur les côtés*/
+figcaption{
+    font-weight: bold ; 
+    text-align: center;
+    font-size: x-large;
+}/* pour que la légende soit en gras, centré et un peu plus grande que le texte*/
+aside>img{
+    text-align: center;
+}
+nav>a{
+    line-height: 25px; /* pour faire un epsace entre les lignes*/
+}
+
+

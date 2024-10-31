@@ -7,36 +7,28 @@
 body{
     background-color: rgb(241, 240, 127);
     }
+#wrapper{
+    width:80%;
+    margin: auto;
+    } /* permet au header, main et aside d'etre centré et d'avoir des bords "vide" sur les côtés*/
 h1{
     color:rgb(250, 192, 67);
     padding-bottom: 1em;
     padding-top: 0.5em;
     }
+h2{
+    padding: 0.2em;
+}
 h2,footer{
     background-color: #4ab9fa;
     text-align: center;
-}
-h2{
-    padding: 0.2em;
 }
 header>figure{
     text-align: center;
     }
 header>figure>img{
     vertical-align: top; /*permet de coller l'image au texte suivant*/
-    }
-main>nav>a, aside, footer, h2{
-    color:white;
-    }
-nav{
-    text-align-last: center;
-    height:20%; 
-    max-width: 30%; 
-    }
-nav, aside{
-    background-color: #4ab9fa;
-    padding: 1em;
-    width:20%;
+    width:100%;/* permet a l'image du header d'être aligné avec le reste du texte*/
     }
 main{
     background-color: white;
@@ -44,24 +36,33 @@ main{
     flex-direction: row; /* permet à ce que les éléments soit alignés horizontalement de la gauche vers la droite*/
     padding:0.5em;
     }
-p{
-    text-align: justify;/* permet au paragraphe d'être justifié*/
-    } 
+main>nav>a, aside, footer, h2{
+    color:white;
+    }
 main>article{
     width:60%;
     padding:0.5em;
+    }
+nav{
+    text-align-last: center;
+    height:20%; 
+    min-width: 30%; 
+    }
+nav, aside{
+    background-color: #4ab9fa;
+    padding: 1em;
+    width:20%;
+    }
+nav>a{
+    line-height: 25px; /* pour faire un epsace entre les lignes*/
 }
-header>figure>img{
-    width:100%;/* permet a l'image du header d'être aligné avec le reste du texte*/
-}
+p{
+    text-align: justify;/* permet au paragraphe d'être justifié*/
+    } 
 img{
     max-width: 100%;
     max-height: 100%;
 } /* permet que l'image puisse varié de taille selon la forme de la page*/
-#wrapper{
-    width:80%;
-    margin: auto;
-} /* permet au header, main et aside d'etre centré et d'avoir des bords "vide" sur les côtés*/
 figcaption{
     font-weight: bold ; 
     text-align: center;
@@ -70,8 +71,57 @@ figcaption{
 aside>img{
     text-align: center;
 }
-nav>a{
-    line-height: 25px; /* pour faire un epsace entre les lignes*/
+
+@media screen and (max-width: 767px) { /* permet de faire une mise en pages pour les périphériques mobiles ou de petite taille*/
+    body {
+        display: flex;
+        font-size: large;
+    } /* permet d'agrandir le texte*/
+    main{
+   
+        flex-direction: column;
+    }/* Pour que la mise en page soit en colonne*/
+    nav{
+        display:flex;
+        min-width: 100%;
+        flex-direction: column;
+    } /* permet de mettre les boutons en colonne*/
+    #wrapper, article, aside{
+        min-width: 100%;
+    }/* permet de retirer l'espace sur les côté que l'on retrouve sur l'ordinateur*/
+    article, aside{
+        text-align: center;
+    }
+    a{
+        min-width:50%;
+        padding:0.2em;
+    }
 }
 
-
+@media screen and (min-width:768px) and (max-width:1024px) {
+    #wrapper {
+        min-height: 100%;
+        min-width: 100%;
+        }/* permet de retirer l'espace sur les côté que l'on retrouve sur l'ordinateur*/
+    main {
+        display: flex; 
+        flex-wrap: wrap;
+        font-size: large;
+    }
+    nav{
+        display: flex;
+        flex-wrap: wrap;
+        width:100%;
+        margin-bottom: 1em;
+    }
+    nav>a{
+        width: 30%;
+    }
+    article, aside{
+        max-width:50%;
+        width:50%;
+    }/* je n'est pas encore trouver un autre moyen pour mettre a côté le main et l'aside*/ 
+    aside{
+        text-align: center;
+    }
+}
